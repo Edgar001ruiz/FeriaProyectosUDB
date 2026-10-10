@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="FeriaProyectosUDB.Site1" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Feria de Proyectos - UDB</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Requisito R1: Logo y Menú -->
+        <header style="background-color: #003366; color: white; padding: 15px;">
+            <img src="logo-udb.png" alt="Logo UDB" width="100" />
+            <nav style="display: inline-block; margin-left: 20px;">
+                <a href="Default.aspx" style="color: white; margin-right: 15px;">Inicio</a>
+                <a href="Proyectos.aspx" style="color: white; margin-right: 15px;">Proyectos</a>
+                <a href="Resultados.aspx" style="color: white; margin-right: 15px;">Resultados</a>
+                <a href="Login.aspx" style="color: white;">Iniciar Sesión</a>
+            </nav>
+            
+            <div style="float: right;">
+                <!-- Requisito R3: Mostrar nombre en todas las páginas -->
+                <asp:Label ID="lblNombreEstudiante" runat="server" Text="[Usuario Invitado]"></asp:Label>
+                
+                <!-- Requisito R6: Botones para cambio de tema -->
+                <asp:Button ID="btnTemaClaro" runat="server" Text="Claro ☀️" style="margin-left: 10px;" />
+                <asp:Button ID="btnTemaOscuro" runat="server" Text="Oscuro 🌙" />
+            </div>
+        </header>
+
+        <main style="padding: 20px; min-height: 400px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- Requisito R1: Pie con fecha de la feria -->
+        <footer style="background-color: #f1f1f1; text-align: center; padding: 10px; border-top: 1px solid #ccc;">
+            <p>Feria de Proyectos de Ingeniería UDB - Octubre 2026</p>
+        </footer>
+    </form>
+</body>
+</html>
